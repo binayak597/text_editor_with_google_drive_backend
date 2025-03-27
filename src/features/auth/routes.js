@@ -28,7 +28,7 @@ router.get("/google/callback",
       const token = jwt.sign({ ...user, folderId }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
       // redirect to frontend with token in URL
-      res.redirect(`http://localhost:5173/dashboard?token=${token}`);
+      res.redirect(`https://texteditorwithgoogledrive.netlify.app/dashboard?token=${token}`);
     } catch (error) {
       console.error("Error during authentication:", error);
       res.status(500).json({ error: "Error during authentication" });
